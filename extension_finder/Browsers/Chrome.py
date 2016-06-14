@@ -50,7 +50,6 @@ class Chrome(Browser):
                 if 'manifest' in extensions_json[extension]:
                     name = extensions_json[extension]['manifest']['name']
                     version = extensions_json[extension]['manifest']['version']
-                   
                 #e = Extension(self.os.CHROME_NAME, name, version, None, extension)
                 e = Extension(name, version, None, extension)
                 extensions.append(e.todict())
