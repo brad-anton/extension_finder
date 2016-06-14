@@ -50,7 +50,7 @@ class Chrome(Browser):
                 if 'manifest' in extensions_json[extension]:
                     name = extensions_json[extension]['manifest']['name']
                     version = extensions_json[extension]['manifest']['version']
-
+                   
                 #e = Extension(self.os.CHROME_NAME, name, version, None, extension)
                 e = Extension(name, version, None, extension)
                 extensions.append(e.todict())
@@ -82,6 +82,25 @@ class Chrome(Browser):
                 if f == 'manifest.json':
                     manifest = path.join(root, f)
                     name, version, extension = self.__process_manifest_json(manifest)
+                    if name[0] == '_':
+                        # Check locale for more friendlier name
+                        locale_paths = [ '_locales{0}en_US{0}messages.json'.format(self.os.SLASH),
+                            '_locales{0}en{0}messages.json'.format(self.os.SLASH)]
+                        for locale_path in locale_paths:
+                            locale_json = path.join(root, locale_path)
+                            if path.isfile(locale_json):
+                                with open(locale_json, 'rb') as f:
+                                    locale_manifest = json.load(f)
+                                    if 'appName' in locale_manifest:
+                                        if 'message' in locale_manifest['appName']:
+                                            name = locale_manifest['appName']['message']
+                                    elif 'extName' in locale_manifest:
+                                        if 'message' in locale_manifest['extName']:
+                                            name = locale_manifest['extName']['message']
+                                    elif 'app_name' in locale_manifest:
+                                        if 'message' in locale_manifest['app_name']:
+                                            name = locale_manifest['app_name']['message']
+                    
                     #e = Extension(self.os.CHROME_NAME, name, version, None, extension)
                     e = Extension(name, version, None, extension)
                     extensions.append(e.todict())

@@ -89,16 +89,17 @@ store. Note that you'll get a warning message that it could not parse the Chrome
 ```
 C:\\extension_finder\\> python extension_finder.py
 [+] Could not parse the Chrome Preferences JSON, falling back to extensions directory
-version    name              id
----------  ----------------  --------------------------------
-0.9        __MSG_appName__   aapocclcgogkmnckokdopfmhonfmgoek
-0.9        __MSG_appName__   aohghmighlieiainnegkcijnfilokake
-14.1       __MSG_appName__   apdfllckaahabafndbhieahigkjlhalf
-4.2.8      __MSG_appName__   blpcfgokakmgnkcojhhkbfbldkacnbeo
-1.1        __MSG_appName__   felcaaldnbdncclmgdcncolpebgiejap
-1.4        __MSG_extName__   ghbmnnjooekpmoecnnnilnnbdlolhkhi
-1.0.0.0    __MSG_APP_NAME__  nmmhkkegccagdldgiimedpiccmgmieda
-8.1        __MSG_appName__   pjkljhegncpnkpknbcohdijeoejaedia
+version    name                       id
+---------  -------------------------  --------------------------------
+0.9        Google Slides              aapocclcgogkmnckokdopfmhonfmgoek
+0.9        Google Docs                aohghmighlieiainnegkcijnfilokake
+14.1       Google Drive               apdfllckaahabafndbhieahigkjlhalf
+1.0.6.92   Search Manager             bahkljhhdeciiaodlkppoonappfnheoi
+4.2.8      YouTube                    blpcfgokakmgnkcojhhkbfbldkacnbeo
+1.1        Google Sheets              felcaaldnbdncclmgdcncolpebgiejap
+1.4        Google Docs Offline        ghbmnnjooekpmoecnnnilnnbdlolhkhi
+1.0.0.0    Chrome Web Store Payments  nmmhkkegccagdldgiimedpiccmgmieda
+8.1        Gmail                      pjkljhegncpnkpknbcohdijeoejaedia
 ```
 
 ### Internet Explorer
